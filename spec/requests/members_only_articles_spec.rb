@@ -42,6 +42,12 @@ RSpec.describe "MembersOnlyArticles", type: :request do
   
         expect(response).to have_http_status(:unauthorized)
       end
+
+      it 'returns an error message' do
+        get '/members_only_articles'
+  
+        expect(response).to include_json({ error: "Not authorized" })
+      end
     end
 
     describe "GET /members_only_articles/:id" do
@@ -49,6 +55,12 @@ RSpec.describe "MembersOnlyArticles", type: :request do
         get "/members_only_articles/#{Article.first.id}"
   
         expect(response).to have_http_status(:unauthorized)
+      end
+
+      it 'returns an error message' do
+        get "/members_only_articles/#{Article.first.id}"
+  
+        expect(response).to include_json({ error: "Not authorized" })
       end
     end
   end
