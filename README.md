@@ -2,7 +2,7 @@
 
 ## Learning Goals
 
-- Use the session hash authorize a user to perform actions
+- Use the session hash to authorize a user to perform actions
 
 ## Introduction
 
@@ -47,9 +47,9 @@ articles to our logged in users.
 Your goal is to add the following functionality to the
 `MembersOnlyArticlesController`:
 
-- If a user is not signed in, the `#create` and `#show` actions should return a
+- If a user is not signed in, the `#index` and `#show` actions should return a
   status code of 401 unauthorized, along with an error message
-- If the user is signed in, the `#create` and `#show` actions should return the
+- If the user is signed in, the `#index` and `#show` actions should return the
   JSON data for the members-only articles.
 
 ## Resources
